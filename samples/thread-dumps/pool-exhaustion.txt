@@ -1,0 +1,45 @@
+2026-10-13 11:40:02
+Full thread dump OpenJDK 64-Bit Server VM (21.0.10+7-LTS mixed mode):
+
+"http-nio-8080-exec-1" #31 prio=5 os_prio=31 tid=0x0000000b1 nid=0x2a01 waiting for monitor entry [0x0000700011]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at com.example.shop.CatalogCache.get(CatalogCache.java:40)
+	- waiting to lock <0x00000007b0000001> (a com.example.shop.CatalogCache)
+	at com.example.shop.CatalogController.list(CatalogController.java:22)
+
+"http-nio-8080-exec-2" #32 prio=5 os_prio=31 tid=0x0000000b2 nid=0x2a02 waiting for monitor entry [0x0000700012]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at com.example.shop.CatalogCache.get(CatalogCache.java:40)
+	- waiting to lock <0x00000007b0000001> (a com.example.shop.CatalogCache)
+	at com.example.shop.CatalogController.list(CatalogController.java:22)
+
+"http-nio-8080-exec-3" #33 prio=5 os_prio=31 tid=0x0000000b3 nid=0x2a03 waiting for monitor entry [0x0000700013]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at com.example.shop.CatalogCache.get(CatalogCache.java:40)
+	- waiting to lock <0x00000007b0000001> (a com.example.shop.CatalogCache)
+	at com.example.shop.CatalogController.list(CatalogController.java:22)
+
+"http-nio-8080-exec-4" #34 prio=5 os_prio=31 tid=0x0000000b4 nid=0x2a04 waiting for monitor entry [0x0000700014]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at com.example.shop.CatalogCache.get(CatalogCache.java:40)
+	- waiting to lock <0x00000007b0000001> (a com.example.shop.CatalogCache)
+	at com.example.shop.CatalogController.list(CatalogController.java:22)
+
+"http-nio-8080-exec-5" #35 prio=5 os_prio=31 tid=0x0000000b5 nid=0x2a05 runnable [0x0000700015]
+   java.lang.Thread.State: RUNNABLE
+	at java.base/java.net.SocketInputStream.socketRead0(Native Method)
+	at com.example.shop.CatalogCache.reload(CatalogCache.java:75)
+	- locked <0x00000007b0000001> (a com.example.shop.CatalogCache)
+	at com.example.shop.CatalogController.refresh(CatalogController.java:30)
+
+"http-nio-8080-exec-6" #36 prio=5 os_prio=31 tid=0x0000000b6 nid=0x2a06 waiting on condition [0x0000700016]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at java.base/jdk.internal.misc.Unsafe.park(Native Method)
+	at com.example.shop.Database.query(Database.java:55)
+
+"http-nio-8080-exec-7" #37 prio=5 os_prio=31 tid=0x0000000b7 nid=0x2a07 waiting on condition [0x0000700017]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at java.base/jdk.internal.misc.Unsafe.park(Native Method)
+	at com.example.shop.Database.query(Database.java:55)
+
+"GC Thread#0" os_prio=31 cpu=12.5ms elapsed=300.0s tid=0x0000000c1 nid=0x3a01 runnable

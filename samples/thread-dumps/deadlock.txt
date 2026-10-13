@@ -1,0 +1,21 @@
+2026-10-13 10:15:30
+Full thread dump OpenJDK 64-Bit Server VM (21.0.10+7-LTS mixed mode):
+
+"order-worker-1" #21 prio=5 os_prio=31 tid=0x0000000a1 nid=0x1a03 waiting for monitor entry [0x0000700001]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at com.example.shop.OrderService.updateInventory(OrderService.java:88)
+	- waiting to lock <0x00000007a1b2c3d0> (a java.lang.Object)
+	- locked <0x00000007a1b2c3e0> (a java.lang.Object)
+	at com.example.shop.OrderService.placeOrder(OrderService.java:52)
+
+"payment-worker-1" #22 prio=5 os_prio=31 tid=0x0000000a2 nid=0x1a04 waiting for monitor entry [0x0000700002]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at com.example.shop.PaymentService.reserveFunds(PaymentService.java:61)
+	- waiting to lock <0x00000007a1b2c3e0> (a java.lang.Object)
+	- locked <0x00000007a1b2c3d0> (a java.lang.Object)
+	at com.example.shop.PaymentService.charge(PaymentService.java:34)
+
+"main" #1 prio=5 os_prio=31 tid=0x0000000a0 nid=0x1903 waiting on condition [0x0000700000]
+   java.lang.Thread.State: WAITING (parking)
+	at java.base/jdk.internal.misc.Unsafe.park(Native Method)
+	at com.example.shop.Main.run(Main.java:20)
