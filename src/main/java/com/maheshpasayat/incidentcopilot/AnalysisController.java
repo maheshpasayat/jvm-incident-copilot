@@ -29,7 +29,7 @@ public class AnalysisController {
         this.objectMapper = objectMapper;
     }
 
-    @PostMapping("/analyze/thread-dump")
+    @PostMapping(value = "/analyze/thread-dump", consumes = org.springframework.http.MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<AnalysisReport> threadDump(@RequestParam("file") MultipartFile file) throws IOException {
         if (file.isEmpty()) {
             return ResponseEntity.badRequest().build();
@@ -39,7 +39,7 @@ public class AnalysisController {
         return ResponseEntity.ok(report);
     }
 
-    @PostMapping("/analyze/gc-log")
+    @PostMapping(value = "/analyze/gc-log", consumes = org.springframework.http.MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<AnalysisReport> gcLog(@RequestParam("file") MultipartFile file) throws IOException {
         if (file.isEmpty()) {
             return ResponseEntity.badRequest().build();
