@@ -1,4 +1,4 @@
-package com.maheshpasayat.incidentcopilot;
+package com.maheshpasayat.incidentcopilot.service;
 
 import com.maheshpasayat.incidentcopilot.core.Explanation;
 import com.maheshpasayat.incidentcopilot.core.Finding;

@@ -9,6 +9,8 @@ import java.util.List;
 
 import com.maheshpasayat.incidentcopilot.core.AnalysisReport;
 import com.maheshpasayat.incidentcopilot.core.Explanation;
+import com.maheshpasayat.incidentcopilot.service.AiClient;
+import com.maheshpasayat.incidentcopilot.service.AnalysisService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

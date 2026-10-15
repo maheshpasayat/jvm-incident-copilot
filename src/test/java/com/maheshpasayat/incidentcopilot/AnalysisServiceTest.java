@@ -8,6 +8,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 import com.maheshpasayat.incidentcopilot.core.AnalysisReport;
+import com.maheshpasayat.incidentcopilot.service.AnalysisService;
 import org.junit.jupiter.api.Test;
 
 class AnalysisServiceTest {

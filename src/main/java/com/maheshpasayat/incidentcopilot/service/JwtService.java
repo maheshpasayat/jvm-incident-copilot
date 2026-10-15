@@ -1,4 +1,4 @@
-package com.maheshpasayat.incidentcopilot;
+package com.maheshpasayat.incidentcopilot.service;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;
