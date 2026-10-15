@@ -10,6 +10,37 @@ services:
       - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U copilot -d incidents"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  ai-service:
+    build: ./ai-service
+    container_name: incident-copilot-ai
+    environment:
+      DATABASE_URL: postgresql://copilot:copilot@postgres:5432/incidents
+      OLLAMA_URL: http://host.docker.internal:11434
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  api:
+    build: .
+    container_name: incident-copilot-api
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/incidents
+      APP_AI_BASE_URL: http://ai-service:8000
+    ports:
+      - "8080:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      ai-service:
+        condition: service_started
 
 volumes:
   pgdata:
