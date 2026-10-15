@@ -136,7 +136,7 @@ docker compose up --build
 | Service    | URL                                   |
 |------------|---------------------------------------|
 | API        | http://localhost:8080                 |
-| Swagger UI | http://localhost:8080/swagger-ui.html |
+| Swagger UI | http://localhost:8080/swagger-ui/index.html |
 | Prometheus | http://localhost:9090                 |
 | Grafana    | http://localhost:3000                 |
 
@@ -182,7 +182,8 @@ Run against the sample files in `samples/`:
 
 - `deadlock.txt` and `real-deadlock.txt`: deadlock found, with the threads and locks in the cycle.
 - `pool-exhaustion.txt`: pool exhaustion found (many threads blocked on the same resource).
-- `gc-pressure.log` and `memory-leak.log`: long GC pauses and heap growth findings.
+- `gc-pressure.log`: long GC pause found (3 pauses of 200 ms or more, longest 2100.7 ms).
+- `memory-leak.log`: heap growth found (heap after Full GC rose from 200 MB to 600 MB over 5 collections), plus long GC pauses.
 - `real-*` files were captured from a small Java program on my own machine (`jcmd Thread.print` and `-Xlog:gc`), not written by hand.
 
 Grafana dashboard with the custom metrics from the API:
