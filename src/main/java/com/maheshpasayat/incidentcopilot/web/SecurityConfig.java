@@ -1,4 +1,4 @@
-package com.maheshpasayat.incidentcopilot;
+package com.maheshpasayat.incidentcopilot.web;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

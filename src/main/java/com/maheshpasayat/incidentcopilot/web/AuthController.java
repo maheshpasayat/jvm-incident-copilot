@@ -1,7 +1,8 @@
-package com.maheshpasayat.incidentcopilot;
+package com.maheshpasayat.incidentcopilot.web;
 
 import java.util.Map;
 
+import com.maheshpasayat.incidentcopilot.UserRepository;
 import com.maheshpasayat.incidentcopilot.service.JwtService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;

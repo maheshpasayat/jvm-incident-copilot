@@ -1,4 +1,4 @@
-package com.maheshpasayat.incidentcopilot;
+package com.maheshpasayat.incidentcopilot.web;
 
 import com.maheshpasayat.incidentcopilot.service.JwtService;
 import jakarta.servlet.FilterChain;

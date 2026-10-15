@@ -1,4 +1,4 @@
-package com.maheshpasayat.incidentcopilot;
+package com.maheshpasayat.incidentcopilot.web;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 
+import com.maheshpasayat.incidentcopilot.ReportEntity;
+import com.maheshpasayat.incidentcopilot.ReportRepository;
 import com.maheshpasayat.incidentcopilot.core.AnalysisReport;
 import com.maheshpasayat.incidentcopilot.core.Explanation;
 import com.maheshpasayat.incidentcopilot.service.AiClient;
