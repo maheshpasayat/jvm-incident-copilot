@@ -23,7 +23,7 @@ import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
-@SpringBootTest
+@SpringBootTest(properties = "app.ai.base-url=http://localhost:1")
 @AutoConfigureMockMvc
 @Testcontainers
 class ApiIntegrationTest {
@@ -89,7 +89,7 @@ class ApiIntegrationTest {
                         .file(sample("gc-logs", "memory-leak.log"))
                         .header("Authorization", "Bearer " + token))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.findings[?(@.ruleId=='HEAP_GROWTH')]").exists());
+                .andExpect(jsonPath("$.findings[*].ruleId").value(org.hamcrest.Matchers.hasItem("HEAP_GROWTH")));
     }
 
     @Autowired

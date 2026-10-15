@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,11 +23,13 @@ public class AnalysisController {
     private final AnalysisService service;
     private final ReportRepository repository;
     private final ObjectMapper objectMapper;
+    private final AiClient aiClient;
 
-    public AnalysisController(AnalysisService service, ReportRepository repository, ObjectMapper objectMapper) {
+    public AnalysisController(AnalysisService service, ReportRepository repository, ObjectMapper objectMapper, AiClient aiClient) {
         this.service = service;
         this.repository = repository;
         this.objectMapper = objectMapper;
+        this.aiClient = aiClient;
     }
 
     @PostMapping(value = "/analyze/thread-dump", consumes = org.springframework.http.MediaType.MULTIPART_FORM_DATA_VALUE)
@@ -34,7 +37,7 @@ public class AnalysisController {
         if (file.isEmpty()) {
             return ResponseEntity.badRequest().build();
         }
-        AnalysisReport report = service.analyzeThreadDump(read(file));
+        AnalysisReport report = enrich(service.analyzeThreadDump(read(file)));
         save(report);
         return ResponseEntity.ok(report);
     }
@@ -44,7 +47,7 @@ public class AnalysisController {
         if (file.isEmpty()) {
             return ResponseEntity.badRequest().build();
         }
-        AnalysisReport report = service.analyzeGcLog(read(file));
+        AnalysisReport report = enrich(service.analyzeGcLog(read(file)));
         save(report);
         return ResponseEntity.ok(report);
     }
@@ -64,5 +67,16 @@ public class AnalysisController {
         String json = objectMapper.writeValueAsString(report);
         repository.save(new ReportEntity(
                 report.sourceType(), report.factsCount(), report.findings().size(), json));
+    }
+
+    private AnalysisReport enrich(AnalysisReport report) {
+        if (report.findings().isEmpty()) {
+            return report;
+        }
+        List<Explanation> explanations = report.findings().stream()
+                .map(aiClient::explain)
+                .flatMap(java.util.Optional::stream)
+                .toList();
+        return explanations.isEmpty() ? report : report.withExplanations(explanations);
     }
 }
