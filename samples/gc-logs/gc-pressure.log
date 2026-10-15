@@ -1,0 +1,8 @@
+[2026-10-13T11:00:00.000+0100][0.010s][info][gc] Using G1
+[2026-10-13T11:00:01.000+0100][1.000s][info][gc] GC(0) Pause Young (Normal) (G1 Evacuation Pause) 900M->600M(1024M) 120.500ms
+[2026-10-13T11:00:01.800+0100][1.800s][info][gc] GC(1) Pause Young (Normal) (G1 Evacuation Pause) 920M->640M(1024M) 135.200ms
+[2026-10-13T11:00:02.500+0100][2.500s][info][gc] GC(2) Pause Young (Normal) (G1 Evacuation Pause) 940M->680M(1024M) 410.800ms
+[2026-10-13T11:00:03.200+0100][3.200s][info][gc] GC(3) Pause Full (G1 Compaction Pause) 1010M->700M(1024M) 1850.300ms
+[2026-10-13T11:00:04.100+0100][4.100s][info][gc] GC(4) Pause Young (Normal) (G1 Evacuation Pause) 960M->720M(1024M) 150.100ms
+[2026-10-13T11:00:04.900+0100][4.900s][info][gc] GC(5) Pause Full (G1 Compaction Pause) 1015M->740M(1024M) 2100.700ms
+[2026-10-13T11:00:05.000+0100][5.000s][info][gc] GC(6) Concurrent Mark Cycle

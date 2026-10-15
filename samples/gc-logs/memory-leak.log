@@ -1,0 +1,7 @@
+[2026-10-13T12:00:00.000+0100][0.010s][info][gc] Using G1
+[2026-10-13T12:10:00.000+0100][600.000s][info][gc] GC(0) Pause Full (G1 Compaction Pause) 700M->200M(1024M) 250.000ms
+[2026-10-13T12:20:00.000+0100][1200.000s][info][gc] GC(1) Pause Full (G1 Compaction Pause) 800M->300M(1024M) 300.000ms
+[2026-10-13T12:30:00.000+0100][1800.000s][info][gc] GC(2) Pause Full (G1 Compaction Pause) 850M->400M(1024M) 350.000ms
+[2026-10-13T12:40:00.000+0100][2400.000s][info][gc] GC(3) Pause Full (G1 Compaction Pause) 900M->500M(1024M) 400.000ms
+[2026-10-13T12:50:00.000+0100][3000.000s][info][gc] GC(4) Pause Full (G1 Compaction Pause) 950M->600M(1024M) 450.000ms
+[2026-10-13T12:50:01.000+0100][3001.000s][info][safepoint] Safepoint "Cleanup", Time since last: 1000000 ns
