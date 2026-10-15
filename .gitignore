@@ -33,3 +33,6 @@ target/
 .venv/
 __pycache__/
 .pytest_cache/
+
+# keep sample GC logs
+!samples/gc-logs/*.log
