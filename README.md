@@ -203,7 +203,12 @@ Grafana dashboard with the custom metrics from the API:
 ## Project layout
 
 ```
-src/                 Java API, parsers, rules, tests
+src/main/java/com/maheshpasayat/incidentcopilot/
+  web/               controllers, JWT filter, security and OpenAPI config
+  service/           AnalysisService, AiClient (circuit breaker), JwtService
+  core/              parsers, rules, findings (plain Java, no Spring)
+  persistence/       JPA entities and repositories
+src/test/            unit tests per layer, plus Testcontainers integration test
 ai-service/          Python FastAPI service, runbooks, tests
 samples/             thread dumps and GC logs (synthetic and real captures)
 monitoring/          Prometheus and Grafana config and dashboard
