@@ -1,4 +1,4 @@
-package com.maheshpasayat.incidentcopilot;
+package com.maheshpasayat.incidentcopilot.core;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -7,9 +7,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-import com.maheshpasayat.incidentcopilot.core.GcEvent;
-import com.maheshpasayat.incidentcopilot.core.GcLog;
-import com.maheshpasayat.incidentcopilot.core.GcLogParser;
 import org.junit.jupiter.api.Test;
 
 class GcLogParserTest {
