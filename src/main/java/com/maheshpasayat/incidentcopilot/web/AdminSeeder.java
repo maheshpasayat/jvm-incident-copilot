@@ -1,7 +1,7 @@
 package com.maheshpasayat.incidentcopilot.web;
 
-import com.maheshpasayat.incidentcopilot.UserEntity;
-import com.maheshpasayat.incidentcopilot.UserRepository;
+import com.maheshpasayat.incidentcopilot.persistence.UserEntity;
+import com.maheshpasayat.incidentcopilot.persistence.UserRepository;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;

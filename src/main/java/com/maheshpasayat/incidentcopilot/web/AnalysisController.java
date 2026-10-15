@@ -7,8 +7,8 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 
-import com.maheshpasayat.incidentcopilot.ReportEntity;
-import com.maheshpasayat.incidentcopilot.ReportRepository;
+import com.maheshpasayat.incidentcopilot.persistence.ReportEntity;
+import com.maheshpasayat.incidentcopilot.persistence.ReportRepository;
 import com.maheshpasayat.incidentcopilot.core.AnalysisReport;
 import com.maheshpasayat.incidentcopilot.core.Explanation;
 import com.maheshpasayat.incidentcopilot.service.AiClient;

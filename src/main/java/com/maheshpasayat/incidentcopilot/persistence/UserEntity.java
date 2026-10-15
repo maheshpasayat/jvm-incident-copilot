@@ -1,4 +1,4 @@
-package com.maheshpasayat.incidentcopilot;
+package com.maheshpasayat.incidentcopilot.persistence;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
