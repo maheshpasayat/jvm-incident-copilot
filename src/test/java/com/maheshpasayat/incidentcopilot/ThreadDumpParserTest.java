@@ -9,6 +9,10 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
+import com.maheshpasayat.incidentcopilot.core.ThreadDump;
+import com.maheshpasayat.incidentcopilot.core.ThreadDumpParser;
+import com.maheshpasayat.incidentcopilot.core.ThreadInfo;
+import com.maheshpasayat.incidentcopilot.core.ThreadState;
 import org.junit.jupiter.api.Test;
 
 class ThreadDumpParserTest {

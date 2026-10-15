@@ -1,20 +1,20 @@
 package com.maheshpasayat.incidentcopilot;
 
+import com.maheshpasayat.incidentcopilot.core.Explanation;
+import com.maheshpasayat.incidentcopilot.core.Finding;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 
 import java.time.Duration;
-import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
+
 @Component
 public class AiClient {
 

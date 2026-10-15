@@ -3,13 +3,15 @@ package com.maheshpasayat.incidentcopilot;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import com.maheshpasayat.incidentcopilot.core.Explanation;
+import com.maheshpasayat.incidentcopilot.core.Finding;
+import com.maheshpasayat.incidentcopilot.core.Severity;
 import com.sun.net.httpserver.HttpServer;
 import java.net.InetSocketAddress;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.web.client.RestTemplateBuilder;
 
 class AiClientTest {
 

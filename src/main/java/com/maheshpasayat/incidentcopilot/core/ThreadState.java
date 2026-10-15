@@ -1,4 +1,4 @@
-package com.maheshpasayat.incidentcopilot;
+package com.maheshpasayat.incidentcopilot.core;
 
 /** Thread states as printed in a JVM thread dump (java.lang.Thread.State). */
 public enum ThreadState {

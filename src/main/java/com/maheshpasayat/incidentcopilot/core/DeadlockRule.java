@@ -1,4 +1,4 @@
-package com.maheshpasayat.incidentcopilot;
+package com.maheshpasayat.incidentcopilot.core;
 
 import java.util.ArrayList;
 import java.util.HashMap;

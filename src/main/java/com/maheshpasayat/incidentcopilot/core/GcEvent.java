@@ -1,4 +1,4 @@
-package com.maheshpasayat.incidentcopilot;
+package com.maheshpasayat.incidentcopilot.core;
 
 /**
  * One garbage collection pause read from a GC log.

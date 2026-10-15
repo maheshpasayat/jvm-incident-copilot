@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
+import com.maheshpasayat.incidentcopilot.core.AnalysisReport;
 import org.junit.jupiter.api.Test;
 
 class AnalysisServiceTest {
