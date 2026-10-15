@@ -10,7 +10,7 @@ public class GcLogParser {
 
     // [2026-10-13T10:15:30.123+0100][12.345s][info][gc] GC(7) Pause Young (Normal) (G1 Evacuation Pause) 512M->128M(1024M) 15.432ms
     private static final Pattern PAUSE_LINE = Pattern.compile(
-            "^\\[[^\\]]*\\]\\[(\\d+(?:\\.\\d+)?)s\\]\\[[^\\]]*\\]\\[gc[^\\]]*\\]\\s+GC\\((\\d+)\\)\\s+"
+            "^(?:\\[[^\\]]*\\])?\\[(\\d+(?:\\.\\d+)?)s\\]\\[[^\\]]*\\]\\[gc[^\\]]*\\]\\s+GC\\((\\d+)\\)\\s+"
                     + "(Pause \\w+).*?\\s(\\d+)M->(\\d+)M\\((\\d+)M\\)\\s+(\\d+(?:\\.\\d+)?)ms\\s*$");
 
     public GcLog parse(String text) {

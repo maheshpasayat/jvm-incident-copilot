@@ -1,0 +1,6 @@
+[0.014s][info][gc] Using G1
+[3.164s][info][gc] GC(0) Pause Young (Concurrent Start) (G1 Humongous Allocation) 116M->115M(256M) 1.875ms
+[3.164s][info][gc] GC(1) Concurrent Mark Cycle
+[3.167s][info][gc] GC(1) Pause Remark 117M->117M(256M) 0.267ms
+[3.168s][info][gc] GC(1) Pause Cleanup 117M->117M(256M) 0.043ms
+[3.168s][info][gc] GC(1) Concurrent Mark Cycle 4.238ms

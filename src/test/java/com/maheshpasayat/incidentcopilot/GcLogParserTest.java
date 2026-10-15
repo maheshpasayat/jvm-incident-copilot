@@ -71,4 +71,11 @@ class GcLogParserTest {
         assertTrue(parser.parse("  \n ").events().isEmpty());
         assertTrue(parser.parse("not a gc log at all").events().isEmpty());
     }
+    @Test
+    void realJdk21FormatWithoutDateTimeDecorationIsParsed() throws IOException {
+        GcLog log = parseSample("real-format.log");
+        assertEquals(3, log.events().size()); // Young, Remark, Cleanup
+        assertEquals("Pause Young", log.events().get(0).type());
+        assertEquals(116, log.events().get(0).heapBeforeMb());
+    }
 }
