@@ -21,12 +21,12 @@ public class AiClient {
     private final RestTemplate rest;
     private final String baseUrl;
 
-    public AiClient(RestTemplateBuilder builder, @Value("${app.ai.base-url}") String baseUrl) {
+    public AiClient(@Value("${app.ai.base-url}") String baseUrl) {
         org.springframework.http.client.SimpleClientHttpRequestFactory factory =
                 new org.springframework.http.client.SimpleClientHttpRequestFactory();
         factory.setConnectTimeout((int) Duration.ofSeconds(2).toMillis());
         factory.setReadTimeout((int) Duration.ofSeconds(30).toMillis());
-        this.rest = builder.requestFactory(() -> factory).build();
+        this.rest = new RestTemplate(factory);
         this.baseUrl = baseUrl;
     }
 

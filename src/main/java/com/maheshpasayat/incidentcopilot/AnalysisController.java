@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+import io.micrometer.core.instrument.MeterRegistry;
 
 @RestController
 @RequestMapping("/api")
@@ -24,12 +25,14 @@ public class AnalysisController {
     private final ReportRepository repository;
     private final ObjectMapper objectMapper;
     private final AiClient aiClient;
+    private final MeterRegistry meters;
 
-    public AnalysisController(AnalysisService service, ReportRepository repository, ObjectMapper objectMapper, AiClient aiClient) {
+    public AnalysisController(AnalysisService service, ReportRepository repository, ObjectMapper objectMapper, AiClient aiClient, MeterRegistry meters) {
         this.service = service;
         this.repository = repository;
         this.objectMapper = objectMapper;
         this.aiClient = aiClient;
+        this.meters = meters;
     }
 
     @PostMapping(value = "/analyze/thread-dump", consumes = org.springframework.http.MediaType.MULTIPART_FORM_DATA_VALUE)
@@ -70,6 +73,10 @@ public class AnalysisController {
     }
 
     private AnalysisReport enrich(AnalysisReport report) {
+        meters.counter("copilot.analyses", "source", report.sourceType()).increment();
+        report.findings().forEach(f ->
+                meters.counter("copilot.findings", "rule", f.ruleId(), "severity", f.severity().name()).increment());
+
         if (report.findings().isEmpty()) {
             return report;
         }
@@ -77,6 +84,7 @@ public class AnalysisController {
                 .map(aiClient::explain)
                 .flatMap(java.util.Optional::stream)
                 .toList();
+        meters.counter("copilot.ai.explanations", "available", String.valueOf(!explanations.isEmpty())).increment();
         return explanations.isEmpty() ? report : report.withExplanations(explanations);
     }
 }

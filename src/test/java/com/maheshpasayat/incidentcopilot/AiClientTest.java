@@ -41,7 +41,7 @@ class AiClientTest {
     @Test
     void success_returnsExplanation() throws Exception {
         String url = startFake(200, "{\"explanation\":\"Lock cycle.\",\"runbook\":\"deadlock\"}");
-        AiClient client = new AiClient(new RestTemplateBuilder(), url);
+        AiClient client = new AiClient(url);
 
         Explanation e = client.explain(finding).orElseThrow();
 
@@ -53,7 +53,7 @@ class AiClientTest {
     @Test
     void serverError_throwsWithoutTheBreakerProxy() throws Exception {
         String url = startFake(500, "{}");
-        AiClient client = new AiClient(new RestTemplateBuilder(), url);
+        AiClient client = new AiClient(url);
 
         boolean threw = false;
         try {
