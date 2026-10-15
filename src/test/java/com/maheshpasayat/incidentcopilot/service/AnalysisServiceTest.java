@@ -1,4 +1,4 @@
-package com.maheshpasayat.incidentcopilot;
+package com.maheshpasayat.incidentcopilot.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -8,7 +8,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 import com.maheshpasayat.incidentcopilot.core.AnalysisReport;
-import com.maheshpasayat.incidentcopilot.service.AnalysisService;
 import org.junit.jupiter.api.Test;
 
 class AnalysisServiceTest {

@@ -1,4 +1,4 @@
-package com.maheshpasayat.incidentcopilot;
+package com.maheshpasayat.incidentcopilot.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -6,7 +6,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import com.maheshpasayat.incidentcopilot.core.Explanation;
 import com.maheshpasayat.incidentcopilot.core.Finding;
 import com.maheshpasayat.incidentcopilot.core.Severity;
-import com.maheshpasayat.incidentcopilot.service.AiClient;
 import com.sun.net.httpserver.HttpServer;
 import java.net.InetSocketAddress;
 import java.nio.charset.StandardCharsets;
